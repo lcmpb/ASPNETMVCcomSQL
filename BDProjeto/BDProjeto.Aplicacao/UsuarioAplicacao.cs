@@ -1,14 +1,13 @@
-﻿using System;
+﻿using BDProjeto.Dominio;
+using BDProjeto.Repositorio;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
 
-namespace ConexaoBD
+namespace BDProjeto.Aplicacao
 {
-    class UsuarioAplicacao
+    public class UsuarioAplicacao
     {
         private bd bd;
 
@@ -91,6 +90,17 @@ namespace ConexaoBD
 
             reader.Close();
             return usuarios;
+        }
+
+
+        public Usuarios ListarPorId(int id)
+        {
+            using (bd = new bd())
+            {
+                var strQuery = string.Format("SELECT * FROM usuarios WHERE usuarioId = {0}", id);
+                var retorno = bd.ExecutaComandoComRetorno(strQuery);
+                return ReaderEmLista(retorno).FirstOrDefault();
+            }
         }
 
 

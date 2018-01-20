@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConexaoBD", "ConexaoBD\ConexaoBD.csproj", "{DDD6B240-4AE4-4B0A-9701-BB242D96D545}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DOS", "ConexaoBD\DOS.csproj", "{DDD6B240-4AE4-4B0A-9701-BB242D96D545}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDProjeto.Repositorio", "BDProjeto.Repositorio\BDProjeto.Repositorio.csproj", "{1CCA80F1-9A4A-4C70-91FA-5A06A30BF05C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDProjeto.Dominio", "BDProjeto.Dominio\BDProjeto.Dominio.csproj", "{A4EF329F-DA9B-4577-AD2F-C01B35A32EB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDProjeto.Aplicacao", "BDProjeto.Aplicacao\BDProjeto.Aplicacao.csproj", "{F7E08A50-EF68-4AB7-AA61-264B9015828E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WEB", "WEB\WEB.csproj", "{DBC5E891-14CA-4DBC-BC0E-699C1656AA19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{1CCA80F1-9A4A-4C70-91FA-5A06A30BF05C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CCA80F1-9A4A-4C70-91FA-5A06A30BF05C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CCA80F1-9A4A-4C70-91FA-5A06A30BF05C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4EF329F-DA9B-4577-AD2F-C01B35A32EB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4EF329F-DA9B-4577-AD2F-C01B35A32EB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4EF329F-DA9B-4577-AD2F-C01B35A32EB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4EF329F-DA9B-4577-AD2F-C01B35A32EB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7E08A50-EF68-4AB7-AA61-264B9015828E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7E08A50-EF68-4AB7-AA61-264B9015828E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7E08A50-EF68-4AB7-AA61-264B9015828E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7E08A50-EF68-4AB7-AA61-264B9015828E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBC5E891-14CA-4DBC-BC0E-699C1656AA19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBC5E891-14CA-4DBC-BC0E-699C1656AA19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBC5E891-14CA-4DBC-BC0E-699C1656AA19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBC5E891-14CA-4DBC-BC0E-699C1656AA19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

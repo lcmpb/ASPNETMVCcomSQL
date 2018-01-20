@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BDProjeto.Aplicacao;
+using BDProjeto.Dominio;
 
-namespace ConexaoBD
+using System;
+
+
+namespace DOS
 {
     class Program
     {
         static void Main(string[] args)
         {
 
-            var bd = new bd();
             var usuarioAplicacao = new UsuarioAplicacao();
 
             Console.Write("Nome: ");

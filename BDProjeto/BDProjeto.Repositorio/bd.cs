@@ -3,9 +3,9 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace ConexaoBD
+namespace BDProjeto.Repositorio
 {
-    class bd : IDisposable
+    public class bd : IDisposable
     {
         //disposable, serve para quando a classe for 
         //executada sempre que é chamado força o metodo

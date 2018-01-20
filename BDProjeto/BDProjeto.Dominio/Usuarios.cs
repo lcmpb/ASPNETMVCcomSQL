@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConexaoBD
+namespace BDProjeto.Dominio
 {
-    class Usuarios
+    public class Usuarios
     {
         public int Id { get; set; }
         public string Nome { get; set; }
