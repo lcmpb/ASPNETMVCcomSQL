@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace ConexaoBD
 {
@@ -10,7 +12,7 @@ namespace ConexaoBD
     {
         private bd bd;
 
-        public void Insert(Usuarios usuarios)
+        private void Insert(Usuarios usuarios)
         {
             var strQuery = "";
             strQuery += "INSERT INTO usuarios(nome, cargo, date)";
@@ -22,7 +24,7 @@ namespace ConexaoBD
             }
         }
 
-        public void Update(Usuarios usuarios)
+        private void Update(Usuarios usuarios)
         {
             var strQuery = "";
             strQuery += "UPDATE usuarios SET ";
@@ -37,10 +39,58 @@ namespace ConexaoBD
             }
         }
 
-        //CONTINUAR_AULA22
-        public void Salvar()
+        public void Salvar(Usuarios usuarios)
         {
+            if (usuarios.Id > 0)
+            {
+                Update(usuarios);
+            }
+            else
+            {
+                Insert(usuarios);
+            }
 
+        }
+
+        public void Delete(int id)
+        {
+            using (bd = new bd())
+            {
+                var strQuery = string.Format(" DELETE FROM usuarios WHERE usuarioId = {0} ", id);
+                bd.ExecutaComando(strQuery);
+            }
+        }
+
+        public List<Usuarios> ListarTodos()
+        {
+            using (bd = new bd())
+            {
+                var strQuery = "SELECT * FROM usuarios ORDER BY usuarioId";
+                var retorno = bd.ExecutaComandoComRetorno(strQuery);
+                return ReaderEmLista(retorno);
+            }
+        }
+
+
+        private List<Usuarios> ReaderEmLista(SqlDataReader reader)
+        {
+            var usuarios = new List<Usuarios>();
+
+            while (reader.Read())
+            {
+                var tempoObjeto = new Usuarios()
+                {
+                    Id = int.Parse(reader["usuarioId"].ToString()),
+                    Nome = reader["nome"].ToString(),
+                    Cargo = reader["cargo"].ToString(),
+                    Date = DateTime.Parse(reader["date"].ToString())
+                };
+
+                usuarios.Add(tempoObjeto);
+            }
+
+            reader.Close();
+            return usuarios;
         }
 
 
