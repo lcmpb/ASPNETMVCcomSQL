@@ -162,6 +162,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\methods_pt.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -218,9 +219,9 @@
       <Project>{A4EF329F-DA9B-4577-AD2F-C01B35A32EB5}</Project>
       <Name>BDProjeto.Dominio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BDProjeto.Repositorio\BDProjeto.Repositorio.csproj">
+    <ProjectReference Include="..\BDProjeto.Repositorio\BDProjeto.RepositorioADO.csproj">
       <Project>{1cca80f1-9a4a-4c70-91fa-5a06a30bf05c}</Project>
-      <Name>BDProjeto.Repositorio</Name>
+      <Name>BDProjeto.RepositorioADO</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

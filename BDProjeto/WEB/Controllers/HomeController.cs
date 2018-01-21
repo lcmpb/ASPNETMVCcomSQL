@@ -7,7 +7,7 @@ namespace WEB.Controllers
     {
         public ActionResult Index()
         {
-            var appUsuario = new UsuarioAplicacao();
+            var appUsuario = UsuarioAplicacaoConstrutor.UsuarioAplicacaoADO();
             var listaUsuarios = appUsuario.ListarTodos();
 
             return View(listaUsuarios);

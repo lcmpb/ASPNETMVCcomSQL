@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DOS", "ConexaoBD\DOS.csproj", "{DDD6B240-4AE4-4B0A-9701-BB242D96D545}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDProjeto.Repositorio", "BDProjeto.Repositorio\BDProjeto.Repositorio.csproj", "{1CCA80F1-9A4A-4C70-91FA-5A06A30BF05C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDProjeto.RepositorioADO", "BDProjeto.Repositorio\BDProjeto.RepositorioADO.csproj", "{1CCA80F1-9A4A-4C70-91FA-5A06A30BF05C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDProjeto.Dominio", "BDProjeto.Dominio\BDProjeto.Dominio.csproj", "{A4EF329F-DA9B-4577-AD2F-C01B35A32EB5}"
 EndProject

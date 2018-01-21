@@ -11,7 +11,7 @@ namespace DOS
         static void Main(string[] args)
         {
 
-            var usuarioAplicacao = new UsuarioAplicacao();
+            var usuarioAplicacao = UsuarioAplicacaoConstrutor.UsuarioAplicacaoADO();
 
             Console.Write("Nome: ");
             string nome = Console.ReadLine();

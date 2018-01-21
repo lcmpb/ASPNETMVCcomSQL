@@ -43,6 +43,13 @@
   <ItemGroup>
     <Compile Include="bd.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioAplicacaoADO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BDProjeto.Dominio\BDProjeto.Dominio.csproj">
+      <Project>{A4EF329F-DA9B-4577-AD2F-C01B35A32EB5}</Project>
+      <Name>BDProjeto.Dominio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
