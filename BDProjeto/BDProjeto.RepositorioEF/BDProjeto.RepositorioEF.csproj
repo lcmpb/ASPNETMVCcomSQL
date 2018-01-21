@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F7E08A50-EF68-4AB7-AA61-264B9015828E}</ProjectGuid>
+    <ProjectGuid>{F899F7FB-23AC-4A31-8356-1048295DB23A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BDProjeto.Aplicacao</RootNamespace>
-    <AssemblyName>BDProjeto.Aplicacao</AssemblyName>
+    <RootNamespace>BDProjeto.RepositorioEF</RootNamespace>
+    <AssemblyName>BDProjeto.RepositorioEF</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,7 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,22 +47,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bd.cs" />
+    <Compile Include="MyConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UsuarioAplicacao.cs" />
-    <Compile Include="UsuarioAplicacaoConstrutor.cs" />
+    <Compile Include="UsuarioRepositorioEF.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BDProjeto.Dominio\BDProjeto.Dominio.csproj">
-      <Project>{a4ef329f-da9b-4577-ad2f-c01b35a32eb5}</Project>
+      <Project>{A4EF329F-DA9B-4577-AD2F-C01B35A32EB5}</Project>
       <Name>BDProjeto.Dominio</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BDProjeto.RepositorioEF\BDProjeto.RepositorioEF.csproj">
-      <Project>{f899f7fb-23ac-4a31-8356-1048295db23a}</Project>
-      <Name>BDProjeto.RepositorioEF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BDProjeto.Repositorio\BDProjeto.RepositorioADO.csproj">
-      <Project>{1cca80f1-9a4a-4c70-91fa-5a06a30bf05c}</Project>
-      <Name>BDProjeto.RepositorioADO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

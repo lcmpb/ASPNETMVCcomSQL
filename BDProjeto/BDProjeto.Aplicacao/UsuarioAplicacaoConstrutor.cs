@@ -1,4 +1,5 @@
 ﻿using BDProjeto.RepositorioADO;
+using BDProjeto.RepositorioEF;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,11 @@ namespace BDProjeto.Aplicacao
         public static UsuarioAplicacao UsuarioAplicacaoADO()
         {
             return new UsuarioAplicacao(new UsuarioAplicacaoADO());
+        }
+
+        public static UsuarioAplicacao UsuarioAplicacaoEF()
+        {
+            return new UsuarioAplicacao(new UsuarioRepositorioEF());
         }
 
     }

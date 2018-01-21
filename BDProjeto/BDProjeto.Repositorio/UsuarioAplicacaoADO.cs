@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace BDProjeto.RepositorioADO
 {
-    public class UsuarioAplicacaoADO:IRepositorio<Usuarios>
+    public class UsuarioAplicacaoADO : IRepositorio<Usuarios>
     {
         private bd bd;
 
@@ -30,7 +30,7 @@ namespace BDProjeto.RepositorioADO
             strQuery += string.Format("nome = '{0}',", usuarios.Nome);
             strQuery += string.Format("cargo = '{0}',", usuarios.Cargo);
             strQuery += string.Format("date = '{0}'", usuarios.Date);
-            strQuery += string.Format(" WHERE usuarioId = '{0}'", usuarios.Id);
+            strQuery += string.Format(" WHERE id = '{0}'", usuarios.Id);
 
             using (bd = new bd())
             {
@@ -55,7 +55,7 @@ namespace BDProjeto.RepositorioADO
         {
             using (bd = new bd())
             {
-                var strQuery = string.Format(" DELETE FROM usuarios WHERE usuarioId = {0} ", usuario.Id);
+                var strQuery = string.Format(" DELETE FROM usuarios WHERE id = {0} ", usuario.Id);
                 bd.ExecutaComando(strQuery);
             }
         }
@@ -64,7 +64,7 @@ namespace BDProjeto.RepositorioADO
         {
             using (bd = new bd())
             {
-                var strQuery = "SELECT * FROM usuarios ORDER BY usuarioId";
+                var strQuery = "SELECT * FROM usuarios ORDER BY id";
                 var retorno = bd.ExecutaComandoComRetorno(strQuery);
                 return ReaderEmLista(retorno);
             }
@@ -79,7 +79,7 @@ namespace BDProjeto.RepositorioADO
             {
                 var tempoObjeto = new Usuarios()
                 {
-                    Id = int.Parse(reader["usuarioId"].ToString()),
+                    Id = int.Parse(reader["id"].ToString()),
                     Nome = reader["nome"].ToString(),
                     Cargo = reader["cargo"].ToString(),
                     Date = DateTime.Parse(reader["date"].ToString())
@@ -97,7 +97,7 @@ namespace BDProjeto.RepositorioADO
         {
             using (bd = new bd())
             {
-                var strQuery = string.Format("SELECT * FROM usuarios WHERE usuarioId = {0}", id);
+                var strQuery = string.Format("SELECT * FROM usuarios WHERE id = {0}", id);
                 var retorno = bd.ExecutaComandoComRetorno(strQuery);
                 return ReaderEmLista(retorno).FirstOrDefault();
             }

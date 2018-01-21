@@ -6,11 +6,18 @@ namespace WEB.Controllers
 {
     public class AlunoController : Controller
     {
+        private UsuarioAplicacao appUsuario; //var global dentro da classe
+
+        public AlunoController()
+        {
+            appUsuario = UsuarioAplicacaoConstrutor.UsuarioAplicacaoADO();
+            // appUsuario = UsuarioAplicacaoConstrutor.UsuarioAplicacaoEF();
+
+        }
+
         // GET: Aluno
         public ActionResult Aluno()
         {
-            var appUsuario = UsuarioAplicacaoConstrutor.UsuarioAplicacaoADO();
-
             var listaUsuarios = appUsuario.ListarTodos();
 
             return View(listaUsuarios);
@@ -26,7 +33,6 @@ namespace WEB.Controllers
         {
             if (ModelState.IsValid)
             {
-                var appUsuario = UsuarioAplicacaoConstrutor.UsuarioAplicacaoADO();
                 appUsuario.Salvar(usuario);
                 return RedirectToAction("Aluno");
             }
@@ -37,7 +43,6 @@ namespace WEB.Controllers
 
         public ActionResult Editar(string id)
         {
-            var appUsuario = UsuarioAplicacaoConstrutor.UsuarioAplicacaoADO();
             var usuario = appUsuario.ListarPorId(id);
 
             if (usuario == null)
@@ -54,7 +59,6 @@ namespace WEB.Controllers
         {
             if (ModelState.IsValid)
             {
-                var appUsuario = UsuarioAplicacaoConstrutor.UsuarioAplicacaoADO();
                 appUsuario.Salvar(usuario);
                 return RedirectToAction("Aluno");
             }
@@ -65,7 +69,6 @@ namespace WEB.Controllers
 
         public ActionResult Excluir(string id)
         {
-            var appUsuario = UsuarioAplicacaoConstrutor.UsuarioAplicacaoADO();
             var usuario = appUsuario.ListarPorId(id);
 
             if (usuario == null)
@@ -81,7 +84,6 @@ namespace WEB.Controllers
         [HttpPost, ActionName("Excluir")]
         public ActionResult ExcluirConfirmado(string id)
         {
-            var appUsuario = UsuarioAplicacaoConstrutor.UsuarioAplicacaoADO();
             var usuario = appUsuario.ListarPorId(id);
             appUsuario.Delete(usuario);
             return RedirectToAction("Aluno");
@@ -91,7 +93,6 @@ namespace WEB.Controllers
 
         public ActionResult Detalhes(string id)
         {
-            var appUsuario = UsuarioAplicacaoConstrutor.UsuarioAplicacaoADO();
             var usuario = appUsuario.ListarPorId(id);
 
             if (usuario == null)
